@@ -1,0 +1,393 @@
+<!doctype html>
+<!--
+  Web resume (first draft), converted from the PDF resume.
+
+  How to use it in the portfolio repo:
+    1. Put this file at:  public/resume/index.html
+    2. Vite copies everything in public/ to the built site as-is, so it is served at /resume/
+       (https://corychristiansen.dev/resume/).
+    3. In src/data/site.ts, set the resume link URL to "/resume/".
+
+  Personal contact info (email, phone, city) is intentionally left out.
+  This page is plain HTML + CSS with no build step, so it can be edited directly.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cory Christiansen | Resume</title>
+    <meta
+      name="description"
+      content="Resume of Cory Christiansen, full-stack engineer building backend systems, data pipelines, and AI-powered apps."
+    />
+    <style>
+      /* ---------- Base ---------- */
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f9fafb; /* light gray page background */
+        color: #1f2937; /* dark gray text */
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        color: #2563eb; /* accent color for links */
+      }
+
+      a:hover {
+        color: #1d4ed8;
+      }
+
+      /* Visible outline when a link is focused with the keyboard */
+      a:focus-visible {
+        outline: 3px solid #93c5fd;
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
+
+      /* ---------- Layout ---------- */
+      /* Centered column with a max width, so it reads well on desktop and fills the screen on mobile */
+      .page {
+        max-width: 48rem;
+        margin: 0 auto;
+        padding: 1.5rem 1rem 3rem;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .sheet {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 1.5rem;
+      }
+
+      /* ---------- Header ---------- */
+      h1 {
+        margin: 0;
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+
+      .role {
+        margin: 0.25rem 0 0;
+        color: #4b5563;
+        font-size: 1.1rem;
+      }
+
+      .header-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.25rem;
+        margin: 0.75rem 0 0;
+        padding: 0;
+        list-style: none;
+        font-size: 0.95rem;
+      }
+
+      /* ---------- Sections ---------- */
+      h2 {
+        margin: 2rem 0 0.75rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 2px solid #e5e7eb;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #4b5563;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+
+      ul {
+        margin: 0.5rem 0 0;
+        padding-left: 1.25rem;
+      }
+
+      li {
+        margin-bottom: 0.4rem;
+      }
+
+      /* ---------- Jobs ---------- */
+      .job {
+        margin-bottom: 1.75rem;
+      }
+
+      .job-org {
+        margin: 0;
+        color: #374151;
+      }
+
+      .job-meta {
+        margin: 0.1rem 0 0;
+        color: #6b7280;
+        font-size: 0.9rem;
+      }
+
+      /* ---------- Skills ---------- */
+      .skills {
+        margin: 0;
+      }
+
+      .skills dt {
+        margin-top: 0.75rem;
+        font-weight: 600;
+      }
+
+      .skills dd {
+        margin: 0.1rem 0 0;
+      }
+
+      /* ---------- Bigger screens ---------- */
+      @media (min-width: 768px) {
+        .page {
+          padding-top: 2.5rem;
+        }
+
+        .sheet {
+          padding: 2.5rem;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      /* ---------- Printing / Save as PDF ---------- */
+      @media print {
+        body {
+          background: #ffffff;
+          font-size: 11pt;
+        }
+
+        .back-link {
+          display: none;
+        }
+
+        .page {
+          max-width: none;
+          padding: 0;
+        }
+
+        .sheet {
+          border: none;
+          box-shadow: none;
+          padding: 0;
+        }
+
+        .job {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <a class="back-link" href="/">&larr; Back to portfolio</a>
+
+      <main class="sheet">
+        <header>
+          <h1>Cory Christiansen</h1>
+          <p class="role">Full-stack engineer</p>
+          <ul class="header-links">
+            <li>
+              <a href="https://www.linkedin.com/in/cory-c-30722ba7/" target="_blank" rel="noopener noreferrer"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/gogogo-hash" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
+          </ul>
+        </header>
+
+        <section aria-labelledby="summary-heading">
+          <h2 id="summary-heading">Professional Summary</h2>
+          <p>
+            Full-stack engineer with 8+ years delivering backend systems, data-intensive integrations, and enterprise
+            platform work in regulated, high-stakes environments. Strong foundation in statically typed languages
+            (C#/.NET, Dart), with practical frontend experience across responsive UI frameworks. Comfortable designing
+            for scale, from database schema and query optimization across millions of records to API architecture,
+            background job pipelines, and AI-assisted development workflows.
+          </p>
+        </section>
+
+        <section aria-labelledby="experience-heading">
+          <h2 id="experience-heading">Experience</h2>
+
+          <article class="job">
+            <h3>Independent Full Stack Developer</h3>
+            <p class="job-org">Pre-Commercial Projects</p>
+            <p class="job-meta">
+              Jun 2025 &ndash; Present &middot; Live:
+              <a href="https://packlight.community" target="_blank" rel="noopener noreferrer">Packlight.Community</a>
+              &middot; Repo:
+              <a href="https://github.com/gogogo-hash/packlight" target="_blank" rel="noopener noreferrer"
+                >github.com/gogogo-hash/packlight</a
+              >
+            </p>
+            <ul>
+              <li>
+                Built Packlight, an invite-only community marketplace with an AI-powered listing pipeline: drop a photo
+                into an AI pipeline and the app auto-generates a title, description, and suggested price using Gemini
+                2.5 Flash.
+              </li>
+              <li>
+                Designed a model-agnostic AI provider interface enabling runtime swap between Gemini, Claude, and
+                OpenAI without modifying calling code; wired photo processing into SolidQueue background jobs to
+                decouple ingestion from the web request cycle.
+              </li>
+              <li>
+                Built an adapter-pattern file ingestion layer driven by a ScannerService that diffs incoming photos
+                against existing records and only queues AI jobs when content changes, avoiding redundant processing.
+              </li>
+              <li>
+                Implemented invite-gated auth (Devise + devise_invitable), Google OAuth2, and Cloudflare Turnstile bot
+                protection; separated admin and regular user roles with a Turbo-powered modal edit workflow.
+              </li>
+              <li>
+                Deployed to Railway as a Dockerized container, splitting Puma web server and SolidQueue worker into
+                separate Procfile processes.
+              </li>
+              <li>
+                Designed and built a production-ready MVP using Flutter/Dart with a responsive, mobile-first UI and
+                modular component architecture, delivering consistent behavior across Android and web platforms.
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <h3>Software Developer (Intermediate &rarr; Senior)</h3>
+            <p class="job-org">Ministry of Finance &ndash; Information Management Branch</p>
+            <p class="job-meta">
+              Nov 2021 &ndash; Present &middot; Site:
+              <a href="https://www.etax.gov.bc.ca/btp/eservices/_/" target="_blank" rel="noopener noreferrer"
+                >etax.gov.bc.ca</a
+              >
+            </p>
+            <ul>
+              <li>
+                Developed and maintained 40+ secure API endpoints integrated with external partners (LTSA, Petrinex,
+                ICBC, national credit bureaus), ensuring high availability and TLS/HTTPS compliance.
+              </li>
+              <li>
+                Led replacement of a costly third-party integration platform by rebuilding 6 API endpoints and 8
+                file-transfer workflows in-house using .NET. Reverse-engineered opaque payload behavior and delivered
+                in 7 weeks, coordinating 30&ndash;40 stakeholders across 7 teams without disruption.
+              </li>
+              <li>
+                Designed a self-healing OAuth2 authentication workflow including autonomous token management, failure
+                classification, and adaptive retry logic.
+              </li>
+              <li>
+                Led a large-scale data-quality remediation across millions of records, implementing new validation
+                rules across multiple SQL Server systems while keeping batch jobs and partner integrations fully
+                operational.
+              </li>
+              <li>
+                Executed a data-correction initiative updating over 10 million warehouse records and 3.3 million
+                embedded form fields across dozens of tables, delivered overnight with zero downtime over a 4-month
+                project.
+              </li>
+              <li>
+                Optimized a major property tax report from 20+ minutes to under 2 minutes by restructuring SQL logic,
+                improving index usage, and introducing caching in the processing layer.
+              </li>
+              <li>
+                Led cost-efficiency review of ~10 on-prem SQL Server instances, cutting backup spend by ~$800K/year
+                and storage cost by ~$100K/year.
+              </li>
+              <li>
+                Designed and built ETL pipelines in Python and SQL automating data ingestion from internal services
+                and external agencies, applying validation rules before loading into analytics-ready datasets for BI
+                dashboards.
+              </li>
+              <li>
+                Provided 4+ years of code reviews, architecture guidance, and mentorship to junior and intermediate
+                developers.
+              </li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <h3>Business Analyst &amp; Software Developer</h3>
+            <p class="job-org">Ministry of Finance &ndash; Receivables Management Office</p>
+            <p class="job-meta">Apr 2018 &ndash; Nov 2021</p>
+            <ul>
+              <li>
+                Built Python, PowerShell, and SQL Server automation replacing manual data handling with repeatable ETL
+                workflows, improving reliability and auditability of operational datasets.
+              </li>
+              <li>
+                Developed complex T-SQL queries (window functions, CTEs, subqueries, reconciliation logic) powering BI
+                dashboards and data-driven workflows including SMS dialer campaigns targeting 1,000+ delinquent
+                accounts monthly.
+              </li>
+              <li>
+                Replaced legacy Access databases with custom Python MVC applications backed by SQL Server,
+                strengthening data integrity and enabling downstream integrations.
+              </li>
+              <li>
+                Led requirements gathering, testing, rollout, and integration of a new provincial payroll tax (EHT)
+                into shared tax administration software (Gentax), scaling to serve tens of thousands of users.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section aria-labelledby="skills-heading">
+          <h2 id="skills-heading">Technical Skills</h2>
+          <dl class="skills">
+            <dt>Languages &amp; Frameworks</dt>
+            <dd>
+              Dart/Flutter, C#/.NET, Python, Ruby on Rails 8, Hotwire/Turbo/Stimulus, T-SQL/SQL, PowerShell
+            </dd>
+
+            <dt>Databases &amp; Data</dt>
+            <dd>
+              MySQL, PostgreSQL, SQL Server (schema design, query optimization, index tuning, large-dataset
+              analytics), Firebase Firestore (NoSQL), data modeling, dimensional design, ETL/ELT pipelines
+            </dd>
+
+            <dt>Infrastructure &amp; Cloud</dt>
+            <dd>
+              GCP / Firebase, Railway (Docker), multi-zone on-prem infrastructure, OAuth2, REST APIs, API gateway
+              management
+            </dd>
+
+            <dt>AI Tooling</dt>
+            <dd>
+              Gemini 2.5 Flash (production), Claude (integrated), OpenAI (integrated); model-agnostic provider
+              abstraction; Agentic Coding workflows (Claude Code, Copilot)
+            </dd>
+          </dl>
+        </section>
+
+        <section aria-labelledby="education-heading">
+          <h2 id="education-heading">Education</h2>
+          <ul>
+            <li>
+              <strong>Certificate, Advanced SQL Programming</strong> &middot; Trivera Technologies &middot; Oct 2022
+            </li>
+            <li>
+              <strong>Diploma, Business Administration (Accounting)</strong> &middot; North Island College &middot; Dec
+              2017
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
