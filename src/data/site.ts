@@ -3,8 +3,9 @@
 export type Project = {
   name: string
   description: string
-  liveUrl: string
-  repoUrl?: string
+  liveUrl?: string
+  repoUrl: string
+  tools: string[]
 }
 
 export type SiteLink = {
@@ -14,30 +15,42 @@ export type SiteLink = {
   external: boolean
 }
 
+export type Photo = {
+  src: string
+  alt: string
+}
+
+export const profilePhoto = {
+  photo: {
+    src: '/Profile.jpg', // file lives in public/Profile.jpg
+    alt: 'Portrait of Cory Christiansen',
+  } satisfies Photo,
+}
+
 export const name = 'Cory Christiansen'
 
 export const tagline =
   'Full-stack engineer building backend systems, data pipelines, and AI-powered apps.'
 
 export const projects: Project[] = [
-  // TODO: replace placeholder projects
   {
-    name: 'Project One',
-    description: 'A placeholder project waiting for a real description.',
-    liveUrl: '#',
-    repoUrl: 'https://github.com/gogogo-hash',
+    name: 'Packlight',
+    description: 'Rails app for private garage sales. Photos in, AI-written title, description and price out, shared through invite-based community pages with comments and email subscriptions.',
+    liveUrl: 'https://packlight.community',
+    repoUrl: 'https://github.com/gogogo-hash/packlight',
+    tools: ['Ruby On Rails', 'JavaScript', 'Tailwind CSS', 'PostgreSQL', 'Railway', 'Docker'],
   },
-  // TODO: replace placeholder projects
   {
-    name: 'Project Two',
-    description: 'Another placeholder project waiting for a real description.',
-    liveUrl: '#',
+    name: 'CitySafe',
+    description: 'CitySafe is a civic safety app for Miyagi Prefecture. It visualizes official crime data — a weighted heatmap of theft incidents — and lets users request an AI-generated summary of crime patterns for a radius around any point on the map.',
+    repoUrl: 'https://github.com/gogogo-hash/citysafe-web',
+    tools: ['React', 'TypeScript', 'Tailwind CSS', 'PostgreSQL'],
   },
-  // TODO: replace placeholder projects
   {
-    name: 'Project Three',
-    description: 'A third placeholder project waiting for a real description.',
-    liveUrl: '#',
+    name: 'Source-Pipeline',
+    description: 'A generic, source-agnostic Extract/Load ingestion core for building data pipelines.',
+    repoUrl: 'https://github.com/gogogo-hash/source-pipeline',
+    tools: ['Python', 'PostgreSQL'],
   },
 ]
 

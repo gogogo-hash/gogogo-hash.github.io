@@ -1,1 +1,56 @@
 @import "tailwindcss";
+
+/* Make the dark: variant follow the .dark class (check Tailwind's Dark mode page for the current syntax) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Layer 1: raw values that change per theme (plain CSS variables) */
+:root {
+    --page: #f8fafc;
+    --surface: #ffffff;
+    --line: #e4e4e7;
+    --body: #52525b;
+    --heading: #080c16;
+    --accent: #1dd4ed;
+    --accent-text: #0e7490;
+    --on-accent: #080c16;
+    color-scheme: light;
+}
+
+.dark {   /* keep this AFTER :root, because they have equal specificity */
+    --page: #080c16;
+    --surface: #111523;
+    --line: #27272a;
+    --body: #a1a1aa;
+    --heading: #f8fafc;
+    --accent: #1dd4ed;
+    --accent-text: #1dd4ed;
+    --on-accent: #080c16;
+    color-scheme: dark;
+}
+
+/* Layer 2: expose them as utilities (bg-page, text-body, ...) */
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-body: var(--body);
+  --color-heading: var(--heading);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+}
+
+/* Not theme-dependent, so it lives in a normal @theme */
+@theme {
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    background-color: var(--page);
+  }
+
+  body {
+    background-color: var(--page);
+    color: var(--body);
+  }
+}
