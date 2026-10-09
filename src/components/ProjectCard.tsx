@@ -12,7 +12,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       {/* Tools used, shown as small tags */}
       <ul className="mt-4 flex flex-wrap gap-2">
         {project.tools.map((tool) => (
-          <li key={tool} className="rounded border border-line px-2 py-1 text-sm text-body">
+          <li key={tool} className="rounded-lg bg-tag px-2 py-1 text-sm text-body">
             {tool}
           </li>
         ))}
@@ -24,7 +24,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold text-accent-text hover:underline focus:outline focus:outline-2 focus:outline-blue-600"
+            className="font-bold text-accent-text hover:text-accent focus:outline focus:outline-2 focus:outline-blue-600"
           >
             Live site
           </a>
@@ -33,7 +33,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           href={project.repoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-bold text-accent-text hover:underline focus:outline focus:outline-2 focus:outline-blue-600"
+          className="font-bold text-accent-text hover:text-accent focus:outline focus:outline-2 focus:outline-blue-600"
         >
           Repo
         </a>

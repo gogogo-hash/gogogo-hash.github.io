@@ -16,6 +16,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cory Christiansen | Resume</title>
+    <script>
+      // Mark the page when it is shown inside the portfolio's iframe so the back link can hide
+      if (window.self !== window.top) document.documentElement.classList.add('embedded')
+    </script>
     <meta
       name="description"
       content="Resume of Cory Christiansen, full-stack engineer building backend systems, data pipelines, and AI-powered apps."
@@ -61,6 +65,10 @@
         display: inline-block;
         margin-bottom: 1rem;
         font-size: 0.9rem;
+      }
+
+      .embedded .back-link {
+        display: none;
       }
 
       .sheet {

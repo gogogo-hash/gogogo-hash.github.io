@@ -32,12 +32,12 @@ This repo is Cory Christiansen's personal developer portfolio site: a single-pag
 - All page content lives in `src/data/site.ts`. To update the name, tagline, projects, or links, edit that file — don't hardcode content in components.
 - Keep Tailwind classes simple and beginner-friendly: basic spacing, typography, layout, and color utilities only. No arbitrary values (`w-[313px]`), no `@apply`, no custom plugins, no complex `group-*`/`peer-*` patterns, and no custom theme config unless truly necessary.
 - Keep components small and single-purpose.
-- No personal contact info (email, phone, address) anywhere in the site or the resume page.
+- No personal contact info (phone, address, personal email) anywhere in the site or the resume page. The one exception is the forwarding address on the custom domain (`Contact@CoryChristiansen.dev`), which is shown in the Contact tab in `src/data/site.ts`.
 - TypeScript strict mode is on — keep it on, and keep the codebase type-clean.
 
 ## Web resume notes
 
-`public/resume/index.html` is standalone, hand-written HTML + CSS with no build step — not React, not Tailwind. Vite copies it into the build as-is, so it's served at `/resume/`. Cory edits its content by hand. It intentionally has no email, phone, or address; don't add any back if you notice it's missing.
+`public/resume/index.html` is standalone, hand-written HTML + CSS with no build step — not React, not Tailwind. Vite copies it into the build as-is, so it's served at `/resume/`. Cory edits its content by hand. It intentionally has no email, phone, or address; don't add any back if you notice it's missing. Its "Back to portfolio" link is hidden by a small script when the page is shown inside the portfolio's Resume-tab iframe.
 
 ## Deployment notes
 
